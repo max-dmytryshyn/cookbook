@@ -1,0 +1,53 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./data/posgresql_db:/var/lib/posgresql/data
+    environment:
+      - POSTGRES_DB=studying_graph_QL_DB
+      - POSTGRES_USER=studying_graph_QL_DB_user
+      - POSTGRES_PASSWORD=graphQL_is_nice
+    container_name: cookbook_db
+    ports:
+      - 5432:5432
+
+  backend:
+    build:
+      context: ./Backend
+    volumes:
+      - .:/usr/src/cookbook_backend
+    environment:
+      - SECRET_KEY=django-insecure-y0sg806+vo-sn(j++(lqk^3uwy&$u5=v4oo%%rc7mj*zik1#%_
+      - NAME=studying_graph_QL_DB
+      - USERNAME=studying_graph_QL_DB_user
+      - PASSWORD=graphQL_is_nice
+    ports:
+      - 8000:8000
+
+    command: bash -c "
+      ls &&
+      cd Backend/cookbook
+      && python manage.py migrate
+      && python manage.py runserver 0.0.0.0:8000
+      "
+    container_name: cookbook_backend
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./Frontend
+    volumes:
+      - .:/usr/src/cookbook_frontend
+    ports:
+      - 3000:3000
+    command: bash -c "
+      cd Frontend
+      && cd cookbook
+      && npm start 
+      "
+    container_name: cookbook_frontend
+    depends_on:
+      - backend
