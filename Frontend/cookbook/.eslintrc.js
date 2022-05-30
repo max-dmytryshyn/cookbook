@@ -12,5 +12,8 @@ module.exports = {
     ecmaVersion: 'latest'
   },
   plugins: ['react', '@typescript-eslint', 'import', 'react-hooks'],
-  rules: {}
+  rules: {},
+  globals: {
+    JSX: 'readonly'
+  }
 };

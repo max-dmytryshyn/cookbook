@@ -1,0 +1,72 @@
+@import '../../typography/colors';
+
+.modalContainer {
+  background-color: $white;
+  border-style: solid;
+  border-color: $black;
+  border-radius: 10px;
+  padding: 5px 20px 20px;
+  width: 800px;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.closeModalButton {
+  background-color: transparent;
+  border: none;
+  font-size: 3rem;
+
+  transition: 0.3s color;
+}
+
+.closeModalButton:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.modalText {
+  font-size: 2rem;
+  text-align: center;
+  margin: 5px 0 40px;
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 40px;
+}
+
+.cancelDeletionButton {
+  padding: 20px;
+  width: 300px;
+  background-color: transparent;
+  border-style: solid;
+  border-color: $red;
+  color: $red;
+
+  transition: 0.3s color, 0.3s background-color;
+}
+
+.cancelDeletionButton:hover {
+  color: $white;
+  background-color: $red;
+}
+
+.confirmDeletionButton {
+  padding: 20px;
+  width: 300px;
+  background-color: transparent;
+  border-style: solid;
+  border-color: $blue;
+  color: $blue;
+
+  transition: 0.3s color, 0.3s background-color;
+}
+
+.confirmDeletionButton:hover {
+  color: $white;
+  background-color: $blue;
+}

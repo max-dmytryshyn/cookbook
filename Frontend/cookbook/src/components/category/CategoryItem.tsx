@@ -1,6 +1,7 @@
 import React from 'react';
 import { Ingredient } from '../../types/CookbookTypes';
 import styles from './CategoryItem.module.scss';
+import { DeleteItemModal } from '../modals/DeleteItemModal';
 
 export const CategoryItem: React.FC<{
   name: string;
@@ -14,7 +15,10 @@ export const CategoryItem: React.FC<{
         <div>
           <button className={styles.viewDetailsButton}>i</button>
           <button className={styles.editButton}>&#9998;</button>
-          <button className={styles.removeButton}>-</button>
+          <DeleteItemModal
+            text={`Delete ${name} category and all ingredients which belongs to it?`}
+            trigger={<button className={styles.removeButton}>-</button>}
+          />
         </div>
       </div>
       <div className={styles.itemContainerBody}>
@@ -24,7 +28,10 @@ export const CategoryItem: React.FC<{
             <div className={styles.ingredientButtonsContainer}>
               <button className={styles.viewDetailsButton}>i</button>
               <button className={styles.editButton}>&#9998;</button>
-              <button className={styles.removeButton}>-</button>
+              <DeleteItemModal
+                text={`Delete ${ingredient.name} from ${name}'s list of ingredients?`}
+                trigger={<button className={styles.removeButton}>-</button>}
+              />
             </div>
           </div>
         ))}
