@@ -1,0 +1,126 @@
+@import "src/typography/colors";
+
+.itemContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-style: solid;
+  border-color: $blue;
+  border-width: 3px;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin: 15px;
+  width: 390px;
+  min-height: 800px;
+}
+
+.viewDetailsButton {
+  width: 45px;
+  height: 45px;
+  font-size: 1.9rem;
+  color: $green;
+  border-radius: 100px;
+  border-color: $green;
+  background-color: $white;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.viewDetailsButton:hover {
+   background-color: $green;
+   color: $white;
+}
+
+.editButton {
+  width: 45px;
+  height: 45px;
+  margin-left: 5px;
+  color: $blue;
+  border-radius: 100px;
+  border-color: $blue;
+  background-color: $white;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.editButton:hover {
+   background-color: $blue;
+   color: $white;
+}
+
+.removeButton {
+  width: 45px;
+  height: 45px;
+  margin-left: 5px;
+  color: $red;
+  border-radius: 100px;
+  border-color: $red;
+  background-color: $white;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.removeButton:hover {
+   background-color: $red;
+   color: $white;
+}
+
+
+.itemContainerHeader {
+  width: 100%;
+  padding-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-style: solid;
+  border-bottom-color: $blue;
+}
+
+.categoryName {
+  margin: 0;
+}
+
+.itemContainerBody {
+  align-items: stretch;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.itemContainerBodyElement {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.ingredientName {
+  margin: 0;
+}
+
+.ingredientButtonsContainer {
+  display: flex;
+  align-items: center;
+}
+
+.itemContainerFooter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 0 0;
+}
+
+.addIngredientButton {
+  width: 80%;
+  padding: 4px 0;
+  color: $green;
+  border-color: $green;
+  background-color: $white;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.addIngredientButton:hover {
+  background-color: $green;
+  color: $white
+}

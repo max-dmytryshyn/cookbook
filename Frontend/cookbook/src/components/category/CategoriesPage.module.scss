@@ -1,0 +1,21 @@
+@import "src/typography/colors";
+
+.categoriesContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.addCategoryButton {
+  width: 435px;
+  height: 860px;
+  margin: 15px;
+  font-size: 10rem;
+  color: $green;
+  border-color: $green;
+  background-color: transparent;
+}
+
+.addCategoryButton:hover {
+  color: $white;
+  background-color: $green;
+}

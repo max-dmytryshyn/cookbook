@@ -1,10 +1,9 @@
-.app {
+.App {
   margin: 0 auto;
   max-width: 1400px;
   border: 2px solid;
   display: flex;
   flex-direction: column;
-  background-color: green;
   font-family: Avenir, sans-serif;
 }
 
@@ -15,4 +14,11 @@ a {
 
 li {
   display: block;
+}
+
+button {
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 8px;
+  font-size: 2rem;
 }
