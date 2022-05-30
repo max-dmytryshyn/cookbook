@@ -7,7 +7,7 @@ import styles from './CategoriesPage.module.scss';
 import { Header } from '../header/Header';
 import { Footer } from '../footer/Footer';
 
-export function CategoriesPage() {
+export const CategoriesPage: React.FC = () => {
   const { loading, error, data } = useQuery<getAllCategoriesQueryDataType | undefined>(
     GET_ALL_CATEGORIES_QUERY
   );
@@ -37,4 +37,4 @@ export function CategoriesPage() {
       <Footer />
     </div>
   );
-}
+};

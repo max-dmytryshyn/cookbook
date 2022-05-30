@@ -2,15 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './HeaderItem.module.scss';
 
-interface HeaderItemProps {
+export const HeaderItem: React.FC<{
   path: string;
   label: string;
-}
-
-export const HeaderItem = (props: HeaderItemProps) => {
+}> = ({ path, label }) => {
   return (
     <li className={styles.headerItem}>
-      <Link to={props.path}>{props.label}</Link>
+      <Link to={path}>{label}</Link>
     </li>
   );
 };

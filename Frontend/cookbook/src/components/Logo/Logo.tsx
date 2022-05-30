@@ -2,19 +2,13 @@ import React from 'react';
 import logoImage from './logo.png';
 import { Link } from 'react-router-dom';
 
-interface logoProps {
+export const Logo: React.FC<{
   width: number;
   height: number;
-}
-
-export const Logo = (props: logoProps) => {
+}> = ({ width, height }) => {
   return (
     <Link to={'/'}>
-      <img
-        src={logoImage}
-        alt="logo"
-        style={{ width: `${props.width}px`, height: `${props.height}px` }}
-      />
+      <img src={logoImage} alt="logo" style={{ width: `${width}px`, height: `${height}px` }} />
     </Link>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import { Logo } from '../Logo/Logo';
 import styles from './Footer.module.scss';
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
   return (
     <footer className={styles.footerContainer}>
       <Logo width={60} height={60} />
