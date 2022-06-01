@@ -6,10 +6,25 @@ export const GET_ALL_CATEGORIES_QUERY = gql`
     allCategories {
       id
       name
+      description
       ingredients {
         id
         name
+        notes
+        category {
+          id
+          name
+        }
       }
+    }
+  }
+`;
+
+export const GET_ALL_CATEGORIES_NAME_AND_ID_QUERY = gql`
+  query {
+    allCategories {
+      id
+      name
     }
   }
 `;

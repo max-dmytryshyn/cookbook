@@ -1,0 +1,17 @@
+@import '../../../typography/colors';
+
+.closeInfoModalButton {
+  padding: 20px;
+  width: 300px;
+  background-color: transparent;
+  border-style: solid;
+  border-color: $green;
+  color: $green;
+
+  transition: 0.3s color, 0.3s background-color;
+}
+
+.closeInfoModalButton:hover {
+  color: $white;
+  background-color: $green;
+}

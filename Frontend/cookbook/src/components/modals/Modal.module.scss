@@ -27,16 +27,15 @@
   cursor: pointer;
 }
 
-.modalText {
-  font-size: 2rem;
-  text-align: center;
-  margin: 5px 0 40px;
+.modalBody {
+  padding: 0 40px 20px;
 }
 
 .modalFooter {
   display: flex;
   justify-content: space-evenly;
   padding-bottom: 40px;
+  padding-top: 10px;
 }
 
 .cancelDeletionButton {

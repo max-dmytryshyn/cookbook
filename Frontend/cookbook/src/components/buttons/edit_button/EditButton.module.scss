@@ -1,0 +1,18 @@
+@import "src/typography/colors";
+
+.editButton {
+  width: 45px;
+  height: 45px;
+  margin-left: 5px;
+  color: $blue;
+  border-radius: 100px;
+  border-color: $blue;
+  background-color: $white;
+
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.editButton:hover {
+   background-color: $blue;
+   color: $white;
+}

@@ -1,0 +1,33 @@
+@import '../../../typography/colors';
+
+.cancelCreatingOrUpdatingButton {
+  padding: 20px;
+  width: 300px;
+  background-color: transparent;
+  border-style: solid;
+  border-color: $red;
+  color: $red;
+
+  transition: 0.3s color, 0.3s background-color;
+}
+
+.cancelCreatingOrUpdatingButton:hover {
+  color: $white;
+  background-color: $red;
+}
+
+.saveItemButton {
+  padding: 20px;
+  width: 300px;
+  background-color: transparent;
+  border-style: solid;
+  border-color: $green;
+  color: $green;
+
+  transition: 0.3s color, 0.3s background-color;
+}
+
+.saveItemButton:hover {
+  color: $white;
+  background-color: $green;
+}
