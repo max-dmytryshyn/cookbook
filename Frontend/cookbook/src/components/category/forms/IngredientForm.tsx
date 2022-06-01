@@ -10,17 +10,11 @@ import {
   getAllCategoriesQueryDataType
 } from 'components/category/gql/Queries';
 
-interface IngredientFormProps {
+export const IngredientForm: React.FC<{
   ingredient?: Ingredient;
   isDisabled: boolean;
   isCategoryDisabled: boolean;
-}
-
-export const IngredientForm: React.FC<IngredientFormProps> = ({
-  ingredient,
-  isDisabled,
-  isCategoryDisabled
-}) => {
+}> = ({ ingredient, isDisabled, isCategoryDisabled }) => {
   let categoriesOptions: { value: string | number; name: string }[];
   if (!isDisabled && !isCategoryDisabled) {
     const { loading, error, data } = useQuery<getAllCategoriesQueryDataType | undefined>(

@@ -4,12 +4,10 @@ import { Category } from 'types/CookbookTypes';
 import { TextFormField } from 'components/form_fileds/TextFormFiled';
 import { TextAreaFormField } from 'components/form_fileds/TextAreaFormField';
 
-interface IngredientFormProps {
+export const CategoryForm: React.FC<{
   category?: Category;
   isDisabled: boolean;
-}
-
-export const CategoryForm: React.FC<IngredientFormProps> = ({ category, isDisabled }) => {
+}> = ({ category, isDisabled }) => {
   const initialValues: Category = {
     name: category ? category.name : '',
     description: category ? category.description : ''

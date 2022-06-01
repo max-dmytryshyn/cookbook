@@ -5,7 +5,8 @@ import { Modal } from '../Modal';
 export const DeleteItemModal: React.FC<{
   trigger: any;
   text: string | undefined;
-}> = ({ trigger, text }) => {
+  onDelete: () => void;
+}> = ({ trigger, text, onDelete }) => {
   const [isOpen, setIsOpen] = useState<boolean>();
   const handleClose = () => setIsOpen(!isOpen);
   const body = <p className={styles.questionText}>{text}</p>;
@@ -17,6 +18,7 @@ export const DeleteItemModal: React.FC<{
       <button
         className={styles.confirmDeletionButton}
         onClick={() => {
+          onDelete();
           handleClose();
         }}>
         Confirm

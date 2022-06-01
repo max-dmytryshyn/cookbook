@@ -5,7 +5,8 @@ import { Modal } from '../Modal';
 export const EditOrCreateItemModal: React.FC<{
   trigger: any;
   form: React.ReactNode;
-}> = ({ trigger, form }) => {
+  onSave: () => void;
+}> = ({ trigger, form, onSave }) => {
   const [isOpen, setIsOpen] = useState<boolean>();
   const handleClose = () => setIsOpen(!isOpen);
   const footer = (
@@ -16,6 +17,7 @@ export const EditOrCreateItemModal: React.FC<{
       <button
         className={styles.saveItemButton}
         onClick={() => {
+          onSave();
           handleClose();
         }}>
         Save

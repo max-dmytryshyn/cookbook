@@ -13,7 +13,8 @@ import { CategoryForm } from '../forms/CategoryForm';
 
 export const CategoryItem: React.FC<{
   category: Category;
-}> = ({ category }) => {
+  renderCategories: () => void;
+}> = ({ category, renderCategories }) => {
   const addIngredientButton = <button className={styles.addIngredientButton}>+</button>;
   return (
     <div className={styles.itemContainer}>
@@ -27,10 +28,12 @@ export const CategoryItem: React.FC<{
           <EditOrCreateItemModal
             trigger={EditButton}
             form={<CategoryForm isDisabled={false} category={category} />}
+            onSave={renderCategories}
           />
           <DeleteItemModal
             text={`Delete ${category.name} category and all ingredients which belong to it?`}
             trigger={DeleteButton}
+            onDelete={renderCategories}
           />
         </div>
       </div>
@@ -43,7 +46,13 @@ export const CategoryItem: React.FC<{
               notes: ingredient.notes,
               category: { id: category.id, name: category.name }
             };
-            return <IngredientItem key={ingredient.id} ingredient={ingredientWithCategory} />;
+            return (
+              <IngredientItem
+                key={ingredient.id}
+                ingredient={ingredientWithCategory}
+                renderCategories={renderCategories}
+              />
+            );
           })
         ) : (
           <></>
@@ -59,6 +68,7 @@ export const CategoryItem: React.FC<{
               isCategoryDisabled={true}
             />
           }
+          onSave={renderCategories}
         />
       </div>
     </div>

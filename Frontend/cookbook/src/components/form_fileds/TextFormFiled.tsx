@@ -4,14 +4,12 @@ import { ErrorMessage } from 'formik';
 import { FormFieldErrorMessage } from './FormFieldErrorMessage';
 import styles from './FormField.module.scss';
 
-interface TextFormFieldProps {
+export const TextFormField: React.FC<{
   name: string;
   label: string;
   type: string;
   isDisabled: boolean;
-}
-
-export const TextFormField: React.FC<TextFormFieldProps> = ({ name, label, type, isDisabled }) => {
+}> = ({ name, label, type, isDisabled }) => {
   return (
     <div className={styles.field}>
       <label htmlFor={name} className={styles.fieldLabel}>

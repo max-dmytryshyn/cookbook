@@ -2,24 +2,15 @@ import React from 'react';
 import { Field } from 'formik';
 import styles from './FormField.module.scss';
 
-interface Option {
-  value: string | number;
-  name: string;
-}
-
-interface SelectFormFieldProps {
+export const SelectFormField: React.FC<{
   name: string;
   label: string;
-  options: Option[];
+  options: {
+    value: string | number;
+    name: string;
+  }[];
   isDisabled: boolean;
-}
-
-export const SelectFormField: React.FC<SelectFormFieldProps> = ({
-  options,
-  name,
-  label,
-  isDisabled
-}) => {
+}> = ({ options, name, label, isDisabled }) => {
   const optionsList = options.map((option) => {
     return (
       <option key={option.value} value={option.value}>

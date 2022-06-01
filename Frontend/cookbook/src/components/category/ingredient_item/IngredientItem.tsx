@@ -9,7 +9,10 @@ import { ShowInfoButton } from 'components/buttons/show_info_button/ShowInfoButt
 import { EditButton } from 'components/buttons/edit_button/EditButton';
 import { DeleteButton } from 'components/buttons/delete_button/DeleteButton';
 
-export const IngredientItem: React.FC<{ ingredient: Ingredient }> = ({ ingredient }) => {
+export const IngredientItem: React.FC<{ ingredient: Ingredient; renderCategories: () => void }> = ({
+  ingredient,
+  renderCategories
+}) => {
   return (
     <div key={ingredient.id} className={styles.ingredientContainer}>
       <p className={styles.ingredientName}> {ingredient.name} </p>
@@ -25,10 +28,12 @@ export const IngredientItem: React.FC<{ ingredient: Ingredient }> = ({ ingredien
           form={
             <IngredientForm isDisabled={false} isCategoryDisabled={true} ingredient={ingredient} />
           }
+          onSave={renderCategories}
         />
         <DeleteItemModal
           text={`Delete ${ingredient.name} from ${name}'s list of ingredients?`}
           trigger={DeleteButton}
+          onDelete={renderCategories}
         />
       </div>
     </div>
